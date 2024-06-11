@@ -1,5 +1,5 @@
 import "./App.css";
-import { Personajes } from "./components/Personajes/Personajes";
+import { Characters } from "./components/Personajes/Characters";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div>
         <h1>MARVEL WORLD</h1>
       </div>
-      <Personajes />
+      <Characters />
     </>
   );
 }
