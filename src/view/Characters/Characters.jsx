@@ -12,27 +12,29 @@ export const Characters = () => {
         const { results } = await getCharacters();
 
         setCharacters(results);
-        console.log("---------", characters);
+        // console.log("---------", characters);
       };
 
       fetchData();
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [characters]);
 
   return (
-    <div className="w-full flex flex-wrap justify-evenly bg-white ">
+    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-200 pb-5">
       {characters.length > 0 ? (
         characters.map((character) => (
           <div
             key={character.id}
-            className="w-1/4 min-h-[320px] bg-red-900 border-2 m-2 flex flex-col items-center "
+            className=" xl:w-1/5 min-h-[320px]  m-2 flex flex-col items-center  bg-white rounded-xl"
           >
-            <h2 className="text-xl font-bold m-2">{character.name}</h2>
+            <h2 className="text-xl font-bold m-2 text-red-700">
+              {character.name}
+            </h2>
             {character.thumbnail && (
               <img
-                className="w-60 h-60"
+                className="w-60 h-60 rounded-xl"
                 src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
               />
             )}{" "}

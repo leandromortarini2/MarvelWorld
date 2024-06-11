@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./output.css"; // Asegúrate de que el archivo CSS compilado es importado
 import App from "./App.jsx";
 import "./index.css";
+import { NavBar } from "./components/NavBar/NavBar.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <NavBar />
+      <App />
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,13 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Characters } from "./components/Personajes/Characters";
+import { Characters } from "./view/Characters/Characters";
+// import { Route, Routes } from "react-router-dom";
+import Comic from "./view/Comic/Comic";
+import { Home } from "./view/Home/Home";
 
 function App() {
   return (
     <>
-      <div>
-        <h1>MARVEL WORLD</h1>
-      </div>
-      <Characters />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/Characters" element={<Characters />}></Route>
+        <Route path="/Comic" element={<Comic />}></Route>
+      </Routes>
+      {/* <Characters /> */}
     </>
   );
 }
