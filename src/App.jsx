@@ -1,9 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Characters } from "./view/Characters/Characters";
-// import { Route, Routes } from "react-router-dom";
-import Comic from "./view/Comic/Comic";
 import { Home } from "./view/Home/Home";
+import { Comic } from "./view/Comics/Comic";
 
 function App() {
   return (
