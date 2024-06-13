@@ -22,12 +22,15 @@ export const Comic = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white   pb-5">
-      <div className="w-full h-[300px]  flex flex-col items-center  ">
-        <h1 className="absolute text-white text-[200px] uppercase top-32 font-bold opacity-100 ">
-          comic
-        </h1>
+      <div className="w-full h-[400px]  flex flex-col items-center  ">
+        <div className="w-1/2 h-[200px] bg-red-900 absolute flex justify-center items-center xl:top-60 rounded-full">
+          <h1 className=" text-white text-[200px] uppercase font-bold opacity-100 ">
+            comic
+          </h1>
+        </div>
+
         <img
-          className=" xl:h-[600px]  "
+          className="w-full xl:h-[400px]  "
           src="https://cdn.marvel.com/content/1x/mi_wallpaper_mas_dsk_01.jpg"
           alt=""
         />
@@ -39,14 +42,20 @@ export const Comic = () => {
               return (
                 <div
                   key={element.id}
-                  className="xl:w-1/6  m-1 flex flex-col items-center bg-white rounded-t-xl border-4 border-white hover:scale-110 duration-1000  "
+                  className="xl:w-1/5 h-92 m-4 flex flex-col items-center bg-white rounded-xl  hover:scale-110 hover:shadow-red-800 hover:shadow-md duration-1000 overflow-hidden shadow-xl shadow-black "
                 >
+                  <div className="w-full  h-20 bg-gray-200 text-red-800  capitalize  flex justify-center items-center">
+                    <h2 className="text-center font-semibold p-1">
+                      {element.title}
+                    </h2>
+                  </div>
+
                   <img
-                    className="w-full h-full rounded-t-xl"
+                    className="w-full h-72 "
                     src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                     alt=""
                   />
-                  <button className="w-full  h-12 bg-red-500 text-white rounded-b-xl hover:bg-red-800 capitalize ">
+                  <button className="w-full  h-10 bg-gray-800 text-white  hover:bg-red-800 capitalize font-semibold text-xl ">
                     see comic
                   </button>
                 </div>

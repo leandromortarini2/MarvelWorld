@@ -40,34 +40,34 @@ export const NavBar = () => {
         {/* CONTAINER BOTONERA */}
         <div className="hidden w-1/2 h-14 lg:flex justify-evenly items-center">
           <Link to="/">
-            <button className="xl:text-xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Home
             </button>
           </Link>
           <Link to="/Characters">
             {" "}
-            <button className="xl:text-xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Character
             </button>
           </Link>
 
           <Link to="/Comic">
             {" "}
-            <button className="xl:text-xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Comic
             </button>
           </Link>
 
           <Link to="/Serie">
             {" "}
-            <button className="xl:text-xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Serie
             </button>
           </Link>
 
           <Link to="/Movie">
             {" "}
-            <button className="xl:text-xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Movie
             </button>
           </Link>
