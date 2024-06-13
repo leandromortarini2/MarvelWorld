@@ -49,3 +49,21 @@ export const getComicID = async (id) => {
   const data2 = data.data;
   return data2;
 };
+
+export const getComicCreators = async (id) => {
+  const response = await axios.get(
+    `http://gateway.marvel.com/v1/public/comics/${id}/creators?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+
+export const getComicCharacters = async (id) => {
+  const response = await axios.get(
+    `http://gateway.marvel.com/v1/public/comics/${id}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};

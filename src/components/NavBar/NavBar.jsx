@@ -16,7 +16,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className="w-full h-14 bg-white flex justify-evenly ">
+      <div className="w-full h-14 bg-white flex justify-evenly shadow-black shadow-2xl ">
         {/* CONTAINER MARCA/LOGO */}
         <div className="w-1/2 sm:w-1/4 h-14 flex items-center justify-center">
           <img

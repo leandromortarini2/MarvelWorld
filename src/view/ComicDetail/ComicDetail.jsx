@@ -1,10 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getComicID } from "../../helpers/solicitudes";
+import { Link, useParams } from "react-router-dom";
+import {
+  getComicCharacters,
+  getComicCreators,
+  getComicID,
+} from "../../helpers/solicitudes";
 
 export const ComicDetail = () => {
   const [comic, setComic] = useState(null);
+  const [creator, setCreator] = useState(null);
+  const [characters, setCharacters] = useState(null);
 
   const { id } = useParams();
 
@@ -21,27 +27,94 @@ export const ComicDetail = () => {
     }
   }, []);
 
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const { results } = await getComicCreators(id);
+        console.log("Creadores==========", results);
+        setCreator(results);
+      };
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const { results } = await getComicCharacters(id);
+        console.log("Personajes.............", results);
+        setCharacters(results);
+      };
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col items-center bg-gray-300 pb-5">
+      <div className="w-full min-h-screen flex flex-col items-center pb-5">
         {comic?.length > 0
-          ? comic.map((element) => {
+          ? comic?.map((element) => {
               return (
                 <div key={element.id} className="w-3/4 min-h-screen flex ">
-                  <div className="w-1/2 min-h-screenbg-gray-300 flex justify-center items-center">
+                  {/* container 1 */}
+                  {/* container 1 */}
+                  <div className="w-1/2 min-h-screen flex justify-center items-center">
                     <img
-                      className="xl:h-[700px] shadow-black shadow-2xl "
+                      className="xl:h-[500px] shadow-black shadow-2xl "
                       src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                       alt=""
                     />
                   </div>
-                  <div className="w-1/2 min-h-screen bg-red-500">
-                    <h1>{element.title}</h1>
+                  {/* container 2  */}
+                  {/* container 2  */}
+                  <div className="w-1/2 flex flex-col justify-center items-center ">
+                    <div className="w-full h-32  rounded-t-2xl flex ">
+                      <h1 className="text-3xl font-bold text-justify text-red-900">
+                        {element.title}
+                      </h1>
+                    </div>
+
+                    <div className="w-full h-[300px]  flex flex-col justify-evenly ">
+                      <h3 className="text-3xl font-bold uppercase text-red-900">
+                        Creators
+                      </h3>
+                      {creator?.length > 0
+                        ? creator?.map((creatorElement) => {
+                            return (
+                              <div key={creatorElement.id}>
+                                <p className="text-gray-800 font-bold text-xl">
+                                  {creatorElement.fullName}
+                                </p>
+                              </div>
+                            );
+                          })
+                        : null}
+                    </div>
                   </div>
                 </div>
               );
             })
           : null}
+        <div className="w-3/4  flex justify-evenly flex-wrap">
+          {characters?.length > 0
+            ? characters.map((characterElement) => {
+                return (
+                  <div key={characterElement.id}>
+                    <Link to={`/CharacterDetail/${characterElement.id}`}>
+                      <img
+                        className="w-60 h-60 rounded-lg m-2 shadow-lg shadow-black hover:scale-110 duration-1000"
+                        src={`${characterElement.thumbnail.path}.${characterElement.thumbnail.extension}`}
+                      />
+                    </Link>
+                  </div>
+                );
+              })
+            : null}
+        </div>
       </div>
     </>
   );

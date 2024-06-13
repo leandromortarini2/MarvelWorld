@@ -4,6 +4,7 @@ import { Characters } from "./view/Characters/Characters";
 import { Home } from "./view/Home/Home";
 import { Comic } from "./view/Comics/Comic";
 import { ComicDetail } from "./view/ComicDetail/ComicDetail";
+import { CharacterDetail } from "./view/CharacterDetail/CharacterDetail";
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
         <Route path="/Characters" element={<Characters />}></Route>
         <Route path="/Comic" element={<Comic />}></Route>
         <Route path="/ComicDetail/:id" element={<ComicDetail />}></Route>
+        <Route
+          path="/CharacterDetail/:id"
+          element={<CharacterDetail />}
+        ></Route>
       </Routes>
       {/* <Characters /> */}
     </>
