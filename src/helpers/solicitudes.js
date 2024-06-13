@@ -40,3 +40,12 @@ export const getComics = async () => {
   const data2 = data.data;
   return data2;
 };
+
+export const getComicID = async (id) => {
+  const response = await axios.get(
+    `http://gateway.marvel.com/v1/public/comics/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
