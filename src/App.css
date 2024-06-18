@@ -1,3 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.ShadowEffect {
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.58));
+}

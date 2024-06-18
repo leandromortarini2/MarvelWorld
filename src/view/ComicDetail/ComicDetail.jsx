@@ -55,7 +55,7 @@ export const ComicDetail = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col justify-center items-center  pb-5">
+      <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gray-300 pb-5">
         {comic?.length > 0
           ? comic?.map((element) => {
               return (

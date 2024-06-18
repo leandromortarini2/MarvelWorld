@@ -33,7 +33,7 @@ export const Pagination = ({
 
   return (
     <nav
-      className="pagination is-centered"
+      className="pagination is-centered mt-5"
       role="navigation"
       aria-label="pagination"
     >
@@ -63,7 +63,7 @@ export const Pagination = ({
                 href="#"
                 className={`pagination-link text-red-900 border-red-800 ${
                   element === currentPage
-                    ? "is-current bg-red-800 text-gray-100 "
+                    ? "is-current bg-red-800 text-gray-200 "
                     : ""
                 } `}
                 onClick={() => handleSpecificPage(element)}
