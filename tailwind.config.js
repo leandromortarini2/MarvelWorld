@@ -5,7 +5,9 @@ const config = {
     "./public/index.html", // Archivo HTML
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: { Marvel: "#ed1c25" },
+    },
   },
   plugins: [],
 };

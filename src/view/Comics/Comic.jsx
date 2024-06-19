@@ -36,10 +36,10 @@ export const Comic = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-gray-200  pb-5">
-      <div className="w-3/4 h-[150px] bg-red-00 flex justify-center items-center ShadowEffect   bg-red-800 m-20 rounded-md">
+      <div className="w-3/4 h-[150px] bg-red-00 flex justify-center items-center ShadowEffect2   bg-red-800 m-20 rounded-md">
         <div className="w-1/2   flex items-center opacity-100   ">
           <img
-            className="w-full xl:h-[250px] rounded-md ml-5 ShadowEffect"
+            className="w-full xl:h-[250px] rounded-md ml-5 ShadowEffect2"
             src="https://cdn.marvel.com/content/1x/mi_wallpaper_mas_dsk_01.jpg"
             alt=""
           />

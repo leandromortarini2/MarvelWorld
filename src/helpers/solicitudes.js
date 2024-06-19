@@ -23,9 +23,9 @@ export const createHash = (timestamp) => {
 // Uso de la función createHash
 const hash = createHash(timestamp);
 
-export const getCharacters = async () => {
+export const getCharacters = async (limit = 99) => {
   const response = await axios.get(
-    `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
   );
   const data = response.data;
   const data2 = data.data;

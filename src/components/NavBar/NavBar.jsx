@@ -20,7 +20,7 @@ export const NavBar = () => {
         {/* CONTAINER MARCA/LOGO */}
         <div className="w-1/2 sm:w-1/4 h-14 flex items-center justify-center">
           <img
-            src="https://i.ibb.co/JpR0fyV/marvel-Logo.png"
+            src="https://www.imgworlds.com/_next/static/media/marvel.7cc446a7.png"
             alt=""
             className="w-20 md:w-24 "
           />
@@ -44,27 +44,24 @@ export const NavBar = () => {
               Home
             </button>
           </Link>
+          <Link to="/Comic">
+            {" "}
+            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
+              Comic
+            </button>
+          </Link>{" "}
           <Link to="/Characters">
             {" "}
             <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Character
             </button>
           </Link>
-
-          <Link to="/Comic">
-            {" "}
-            <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
-              Comic
-            </button>
-          </Link>
-
           <Link to="/Serie">
             {" "}
             <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
               Serie
             </button>
           </Link>
-
           <Link to="/Movie">
             {" "}
             <button className="xl:text-2xl text-red-700 font-bold duration-1000 hover:text-red-500 hover:scale-110 bg-transparent border-none ">
