@@ -5,6 +5,7 @@ import { Home } from "./view/Home/Home";
 import { Comic } from "./view/Comics/Comic";
 import { ComicDetail } from "./view/ComicDetail/ComicDetail";
 import { CharacterDetail } from "./view/CharacterDetail/CharacterDetail";
+import { Serie } from "./view/Serie/Serie";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/CharacterDetail/:id"
           element={<CharacterDetail />}
         ></Route>
+        <Route path="/Serie" element={<Serie />}></Route>
       </Routes>
       {/* <Characters /> */}
     </>

@@ -36,19 +36,30 @@ export const Comic = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-gray-200  pb-5">
-      <div className="w-3/4 h-[150px] bg-red-00 flex justify-center items-center ShadowEffect2   bg-red-800 m-20 rounded-md">
-        <div className="w-1/2   flex items-center opacity-100   ">
+      <div className="w-3/4 h-[250px] flex justify-center items-center bg-Marvel  rounded-md p-5 m-10 ShadowEffect2">
+        {/*  */}
+        <div className="w-1/4 flex items-center opacity-100 ">
           <img
-            className="w-full xl:h-[250px] rounded-md ml-5 ShadowEffect2"
-            src="https://cdn.marvel.com/content/1x/mi_wallpaper_mas_dsk_01.jpg"
+            className=" xl:h-[300px] rounded-md ShadowEffect2"
+            src="https://www.imgworlds.com/_next/static/media/spiderman.8071ace6.png"
             alt=""
           />
-        </div>
-        <div className="w-1/2 h-3/4  flex justify-center items-start rounded-lg  ">
-          <h1 className=" text-white text-[80px] uppercase font-bold rounded-lg ">
+        </div>{" "}
+        <div className="w-3/4 h-3/4  flex flex-col justify-center items-center rounded-lg  ">
+          <h1 className=" text-white text-[100px] uppercase font-bold rounded-lg ShadowEffect2">
             Comic
           </h1>
+          <p className="text-white text-3xl font-bold text-center ShadowEffect2">
+            find the most exciting stories{" "}
+          </p>
         </div>
+        <div className="w-1/4 flex items-center opacity-100 ">
+          <img
+            className=" xl:h-[300px] rounded-md ShadowEffect2"
+            src="https://www.imgworlds.com/_next/static/media/thor.aabaca85.png"
+            alt=""
+          />
+        </div>{" "}
       </div>
       <div className="w-full flex flex-col flex-wrap justify-center items-center ">
         <div className="w-full flex flex-wrap justify-center ">
