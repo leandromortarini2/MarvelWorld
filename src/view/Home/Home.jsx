@@ -5,7 +5,7 @@ import Example from "../../components/Carrousel/Carrousel";
 export const Home = () => {
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col  items-center bg-gray-200">
+      <div className="w-full min-h-screen flex flex-col  items-center bg-gray-800">
         <div className="hidden md:w-full bg-Marvel md:flex   justify-center">
           <Example />
           <img

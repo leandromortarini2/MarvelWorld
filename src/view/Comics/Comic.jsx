@@ -7,7 +7,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 
 export const Comic = () => {
   const [comics, setComics] = useState([]);
-  const [comicsPerPage, setComicsPerPage] = useState(5);
+  const [comicsPerPage, setComicsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalComics = comics.length;
@@ -69,13 +69,8 @@ export const Comic = () => {
                   return (
                     <div
                       key={element.id}
-                      className="xl:w-[250px] h-[400px]  m-4 flex flex-col items-center justify-evenly shadow-lg shadow-gray-800 hover:scale-110 hover:shadow-black hover:shadow-2xl duration-1000 overflow-hidden rounded-lg "
+                      className="xl:w-[250px] h-[400px]  m-4 flex flex-col items-center justify-evenly shadow-lg ShadowEffect hover:scale-110  duration-1000 overflow-hidden rounded-lg "
                     >
-                      <div className="w-full  h-20 bg-red-800 text-white capitalize  flex justify-center items-center">
-                        <h2 className="text-center font-semibold p-1">
-                          {element.title}
-                        </h2>
-                      </div>
                       <Link to={`/ComicDetail/${element.id}`}>
                         <img
                           className="w-full h-72 "
@@ -83,6 +78,11 @@ export const Comic = () => {
                           alt=""
                         />
                       </Link>
+                      <div className="w-full  h-20 bg-Marvel text-white capitalize  flex justify-center items-center">
+                        <h2 className="text-center font-semibold p-1">
+                          {element.title}
+                        </h2>
+                      </div>
                     </div>
                   );
                 })

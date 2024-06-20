@@ -23,18 +23,15 @@ export const createHash = (timestamp) => {
 // Uso de la función createHash
 const hash = createHash(timestamp);
 
-export const getCharacters = async () => {
+// COMIC
+// COMIC
+// COMIC
+// COMIC
+// COMIC
+// COMIC
+export const getComics = async (limit = 99) => {
   const response = await axios.get(
-    `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
-  );
-  const data = response.data;
-  const data2 = data.data;
-  return data2;
-};
-
-export const getComics = async () => {
-  const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    `http://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
   );
   const data = response.data;
   const data2 = data.data;
@@ -59,10 +56,74 @@ export const getComicCreators = async (id) => {
   return data2;
 };
 
-export const getComicCharacters = async (id) => {
+export const getComicCharacters = async (id, limit = 99) => {
   const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics/${id}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    `http://gateway.marvel.com/v1/public/comics/${id}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
   );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+
+// PERSONAJES
+// PERSONAJES
+// PERSONAJES
+// PERSONAJES
+// PERSONAJES
+// PERSONAJES
+
+export const getCharacters = async (limit = 99) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
+  );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+
+export const getCharacterID = async (id) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+
+  return data2;
+};
+
+export const getCharacterComic = async (id, limit = 99) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+export const getCharacterEvents = async (id) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters/${id}/events?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+export const getCharacterSeries = async (id) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters/${id}/series?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+export const getCharacterStories = async (id) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/characters/${id}/stories?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
   const data = response.data;
   const data2 = data.data;
   return data2;

@@ -8,7 +8,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 
 export const Characters = () => {
   const [characters, setCharacters] = useState([]);
-  const [charactersPerPage, setCharactersPage] = useState(5);
+  const [charactersPerPage, setCharactersPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalComics = characters.length;
@@ -64,10 +64,10 @@ export const Characters = () => {
             .map((character) => (
               <div
                 key={character.id}
-                className=" xl:w-1/6 min-h-[350px]  m-2 flex flex-col items-center justify-between   overflow-hidden hover:scale-105 duration-500 ShadowEffect rounded-lg "
+                className="xl:w-[250px] h-[400px]  m-4 flex flex-col items-center justify-evenly shadow-lg ShadowEffect hover:scale-110  duration-1000 overflow-hidden rounded-lg "
               >
                 {character.thumbnail && (
-                  <Link to={`/ComicDetail/${character.id}`}>
+                  <Link to={`/CharacterDetail/${character.id}`}>
                     <img
                       className="w-full h-[300px] "
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
