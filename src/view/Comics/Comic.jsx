@@ -41,7 +41,6 @@ export const Comic = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col  items-center bg-gray-800  pb-5">
-      {loading && <Loader />}
       <div className="hidden md:w-full bg-Marvel md:flex   justify-center">
         <Example />
         <div className="w-1/2 flex justify-center items-center">
@@ -60,7 +59,7 @@ export const Comic = () => {
         </div>
         <Example />
       </div>
-
+      {loading && <Loader />}
       <div className="w-full flex flex-col flex-wrap justify-center items-center ">
         <div className="w-full flex flex-wrap justify-center ">
           {comics.length > 0 ? (
