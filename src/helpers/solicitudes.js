@@ -31,7 +31,7 @@ const hash = createHash(timestamp);
 // COMIC
 export const getComics = async (limit = 99) => {
   const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
+    `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
   );
   const data = response.data;
   const data2 = data.data;
@@ -40,7 +40,7 @@ export const getComics = async (limit = 99) => {
 
 export const getComicID = async (id) => {
   const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com/v1/public/comics/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
   );
   const data = response.data;
   const data2 = data.data;
@@ -49,7 +49,7 @@ export const getComicID = async (id) => {
 
 export const getComicCreators = async (id) => {
   const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics/${id}/creators?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com/v1/public/comics/${id}/creators?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
   );
   const data = response.data;
   const data2 = data.data;
@@ -58,7 +58,7 @@ export const getComicCreators = async (id) => {
 
 export const getComicCharacters = async (id, limit = 99) => {
   const response = await axios.get(
-    `http://gateway.marvel.com/v1/public/comics/${id}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
+    `https://gateway.marvel.com/v1/public/comics/${id}/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
   );
   const data = response.data;
   const data2 = data.data;

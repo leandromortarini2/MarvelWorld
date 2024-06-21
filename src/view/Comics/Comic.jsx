@@ -61,8 +61,8 @@ export const Comic = () => {
             <Loader />
           ) : (
             <div className="w-full flex flex-wrap justify-center">
-              {comics.length > 0 ? (
-                comics.slice(firstIndex, lastIndex).map((element) => (
+              {comics?.length > 0 ? (
+                comics?.slice(firstIndex, lastIndex).map((element) => (
                   <div
                     key={element.id}
                     className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg "
