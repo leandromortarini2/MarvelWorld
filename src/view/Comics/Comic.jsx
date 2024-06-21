@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { getComics } from "../../helpers/solicitudes";
 import { Link } from "react-router-dom";
 import logoSuper from "../../assets/capitan.svg";
@@ -16,20 +16,21 @@ export const Comic = () => {
   const firstIndex = lastIndex - comicsPerPage;
 
   useEffect(() => {
-    try {
-      const fetchData = async () => {
-        const { results } = await getComics();
+    lazy(() => {
+      try {
+        const fetchData = async () => {
+          const { results } = await getComics();
 
-        setComics(results);
-        console.log("---------", results);
-      };
+          setComics(results);
+          console.log("---------", results);
+        };
 
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
+        fetchData();
+      } catch (error) {
+        console.log(error);
+      }
+    }, []);
+  });
   // const handleButtonId = (id) => {
 
   // }
@@ -63,6 +64,12 @@ export const Comic = () => {
       </div>
       <div className="w-full flex flex-col flex-wrap justify-center items-center ">
         <div className="w-full flex flex-wrap justify-center ">
+          <Suspense>
+            <img
+              src="https://i.ibb.co/4PfM6kS/r-1319511-u-AVWG-Photoroom-1.png"
+              alt=""
+            />
+          </Suspense>
           {comics.length > 0
             ? comics
                 .map((element) => {
