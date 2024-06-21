@@ -39,7 +39,7 @@ export const Pagination = ({
       <a
         onClick={handlePreviusPage}
         href="#"
-        className={`pagination-previous bg-red-800 border-none  ${
+        className={`pagination-previous bg-Marvel border-none  ${
           currentPage === 1 ? "is-disabled" : ""
         }`}
       >
@@ -48,7 +48,7 @@ export const Pagination = ({
       <a
         onClick={handleNextPage}
         href="#"
-        className={`pagination-next bg-red-800 border-none ${
+        className={`pagination-next bg-Marvel border-none ${
           currentPage >= pageNumbers.length ? "is-disabled" : ""
         }`}
       >
@@ -60,9 +60,9 @@ export const Pagination = ({
             <li key={element}>
               <a
                 href="#"
-                className={`pagination-link text-red-900 border-red-800 ${
+                className={`pagination-link text-white border-white ${
                   element === currentPage
-                    ? "is-current bg-red-800 text-gray-200 "
+                    ? "is-current bg-Marvel text-gray-200 "
                     : ""
                 } `}
                 onClick={() => handleSpecificPage(element)}
