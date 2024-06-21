@@ -21,9 +21,10 @@ export const Comic = () => {
     const fetchData = async () => {
       try {
         const { results } = await getComics();
+        console.log(results); // Verifica la respuesta de la API
         setComics(results);
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching comics:", error);
       } finally {
         setLoaderState(false);
       }
@@ -60,28 +61,30 @@ export const Comic = () => {
             <Loader />
           ) : (
             <div className="w-full flex flex-wrap justify-center">
-              {comics.length > 0
-                ? comics.slice(firstIndex, lastIndex).map((element) => (
-                    <div
-                      key={element.id}
-                      className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg "
-                    >
-                      <img
-                        className="w-full h-72"
-                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                        alt=""
-                      />
+              {comics.length > 0 ? (
+                comics.slice(firstIndex, lastIndex).map((element) => (
+                  <div
+                    key={element.id}
+                    className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg "
+                  >
+                    <img
+                      className="w-full h-72"
+                      src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                      alt=""
+                    />
 
-                      <div className="w-full h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
-                        <Link to={`/ComicDetail/${element.id}`}>
-                          <h2 className="text-center  font-semibold p-1 ">
-                            {element.title}
-                          </h2>
-                        </Link>
-                      </div>
+                    <div className="w-full h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
+                      <Link to={`/ComicDetail/${element.id}`}>
+                        <h2 className="text-center  font-semibold p-1 ">
+                          {element.title}
+                        </h2>
+                      </Link>
                     </div>
-                  ))
-                : null}
+                  </div>
+                ))
+              ) : (
+                <div className="text-white">No comics found</div>
+              )}
             </div>
           )}
         </div>
