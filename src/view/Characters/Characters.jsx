@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
 import { getCharacters } from "../../helpers/solicitudes";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logoSuper from "../../assets/capitan.svg";
 import { Pagination } from "../../components/Pagination/Pagination";
+import Example from "../../components/Carrousel/Carrousel";
 
 export const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -29,35 +28,29 @@ export const Characters = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [characters]);
+  }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-200 pb-5">
-      <div className="w-3/4 h-[250px] flex justify-center items-center bg-Marvel  rounded-md p-5 m-10 ShadowEffect2">
-        {/*  */}
-        <div className="w-1/4 flex items-center opacity-100 ">
-          <img
-            className=" xl:h-[300px] rounded-md ShadowEffect2"
-            src="https://www.imgworlds.com/_next/static/media/hulk.4aaa2db7.png"
-            alt=""
-          />
-        </div>{" "}
-        <div className="w-3/4 h-3/4  flex flex-col justify-center items-center rounded-lg  ">
-          <h1 className=" text-white text-[100px] uppercase font-bold rounded-lg ShadowEffect2">
+    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-800 pb-5">
+      <div className="hidden md:w-full bg-Marvel md:flex justify-center">
+        <Example />
+        <div className="w-1/2 flex justify-center items-center">
+          <h2 className="md:text-[60px] lg:text-[80px] xl:text-[110px] text-white uppercase font-bold  ShadowEffect2">
+            {" "}
             Character
-          </h1>
-          <p className="text-white text-3xl font-bold text-center ShadowEffect2">
-            super heroes of the marvel world{" "}
-          </p>
+          </h2>
         </div>
-        <div className="w-1/4 flex items-center opacity-100 ">
-          <img
-            className=" xl:h-[280px] rounded-md ShadowEffect2"
-            src="https://www.imgworlds.com/_next/static/media/captain-america.e49a7de3.png"
-            alt=""
-          />
-        </div>{" "}
       </div>
+      {/* celu */}
+      <div className="w-full md:hidden bg-Marvel flex flex-col  justify-center">
+        <div className="w-full  flex justify-center items-center md:hidden">
+          <h2 className="text-[50px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
+            Character
+          </h2>
+        </div>
+        <Example />
+      </div>
+
       <div className="w-full flex  flex-wrap justify-center items-center ">
         {characters.length > 0 ? (
           characters
@@ -84,7 +77,13 @@ export const Characters = () => {
             ))
             .slice(firstIndex, lastIndex)
         ) : (
-          <p>Cargando personajes...</p>
+          <div className="w-full  flex justify-center items-center">
+            <img
+              className="w-3/4 md:w-1/2"
+              src="https://i.ibb.co/Mh0xC81/r-1319511-u-AVWG-Photoroom-Photoroom.png"
+              alt=""
+            />
+          </div>
         )}
       </div>
       <Pagination

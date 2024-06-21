@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import { getComics } from "../../helpers/solicitudes";
 import { Link } from "react-router-dom";
 import logoSuper from "../../assets/capitan.svg";
 import { Pagination } from "../../components/Pagination/Pagination";
+import { Loader } from "../../components/Loader/Loader";
+import Example from "../../components/Carrousel/Carrousel";
 
 export const Comic = () => {
+  const [loading, setLoading] = useState(false);
   const [comics, setComics] = useState([]);
   const [comicsPerPage, setComicsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,93 +19,93 @@ export const Comic = () => {
   const firstIndex = lastIndex - comicsPerPage;
 
   useEffect(() => {
-    lazy(() => {
-      try {
-        const fetchData = async () => {
-          const { results } = await getComics();
+    try {
+      const fetchData = async () => {
+        setLoading(true);
+        const { results } = await getComics();
+        setComics(results);
+        // console.log("---------", results);
+      };
 
-          setComics(results);
-          console.log("---------", results);
-        };
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
-        fetchData();
-      } catch (error) {
-        console.log(error);
-      }
-    }, []);
-  });
   // const handleButtonId = (id) => {
 
   // }
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center bg-gray-200  pb-5">
-      <div className="w-3/4 h-[250px] flex justify-center items-center bg-Marvel  rounded-md p-5 m-10 ShadowEffect2">
-        {/*  */}
-        <div className="w-1/4 flex items-center opacity-100 ">
-          <img
-            className=" xl:h-[300px] rounded-md ShadowEffect2"
-            src="https://www.imgworlds.com/_next/static/media/spiderman.8071ace6.png"
-            alt=""
-          />
-        </div>{" "}
-        <div className="w-3/4 h-3/4  flex flex-col justify-center items-center rounded-lg  ">
-          <h1 className=" text-white text-[100px] uppercase font-bold rounded-lg ShadowEffect2">
-            Comic
-          </h1>
-          <p className="text-white text-3xl font-bold text-center ShadowEffect2">
-            find the most exciting stories{" "}
-          </p>
+    <div className="w-full min-h-screen flex flex-col  items-center bg-gray-800  pb-5">
+      {loading && <Loader />}
+      <div className="hidden md:w-full bg-Marvel md:flex   justify-center">
+        <Example />
+        <div className="w-1/2 flex justify-center items-center">
+          <h2 className="md:text-[100px] lg:text-[150px] xl:text-[200px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
+            {" "}
+            comic
+          </h2>
         </div>
-        <div className="w-1/4 flex items-center opacity-100 ">
-          <img
-            className=" xl:h-[300px] rounded-md ShadowEffect2"
-            src="https://www.imgworlds.com/_next/static/media/thor.aabaca85.png"
-            alt=""
-          />
-        </div>{" "}
       </div>
+      {/* celu */}
+      <div className="w-full md:hidden bg-Marvel flex flex-col  justify-center">
+        <div className="w-full  flex justify-center items-center md:hidden">
+          <h2 className="text-[80px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
+            comic
+          </h2>
+        </div>
+        <Example />
+      </div>
+
       <div className="w-full flex flex-col flex-wrap justify-center items-center ">
         <div className="w-full flex flex-wrap justify-center ">
-          <Suspense>
-            <img
-              src="https://i.ibb.co/4PfM6kS/r-1319511-u-AVWG-Photoroom-1.png"
-              alt=""
-            />
-          </Suspense>
-          {comics.length > 0
-            ? comics
-                .map((element) => {
-                  return (
-                    <div
-                      key={element.id}
-                      className="xl:w-[250px] h-[400px]  m-4 flex flex-col items-center justify-evenly shadow-lg ShadowEffect hover:scale-110  duration-1000 overflow-hidden rounded-lg "
-                    >
-                      <Link to={`/ComicDetail/${element.id}`}>
-                        <img
-                          className="w-full h-72 "
-                          src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                          alt=""
-                        />
-                      </Link>
-                      <div className="w-full  h-20 bg-Marvel text-white capitalize  flex justify-center items-center">
-                        <h2 className="text-center font-semibold p-1">
-                          {element.title}
-                        </h2>
-                      </div>
+          {comics.length > 0 ? (
+            comics
+              .map((element) => {
+                return (
+                  <div
+                    key={element.id}
+                    className="xl:w-[250px] h-[400px]  m-4 flex flex-col items-center justify-evenly shadow-lg ShadowEffect hover:scale-110  duration-1000 overflow-hidden rounded-lg "
+                  >
+                    <Link to={`/ComicDetail/${element.id}`}>
+                      <img
+                        className="w-full h-72 "
+                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                        alt=""
+                      />
+                    </Link>
+                    <div className="w-full  h-20 bg-Marvel text-white capitalize  flex justify-center items-center">
+                      <h2 className="text-center font-semibold p-1">
+                        {element.title}
+                      </h2>
                     </div>
-                  );
-                })
-                .slice(firstIndex, lastIndex)
-            : null}
+                  </div>
+                );
+              })
+              .slice(firstIndex, lastIndex)
+          ) : (
+            <div className="w-full  flex justify-center items-center">
+              <img
+                className="w-3/4 md:w-1/2 "
+                src="https://i.ibb.co/Mh0xC81/r-1319511-u-AVWG-Photoroom-Photoroom.png"
+                alt=""
+              />
+            </div>
+          )}
         </div>
       </div>
-      <Pagination
-        comicsPerPage={comicsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        totalComics={totalComics}
-      />
+      {comics.length > 0 ? (
+        <Pagination
+          comicsPerPage={comicsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalComics={totalComics}
+        />
+      ) : null}
     </div>
   );
 };
