@@ -9,7 +9,7 @@ import Example from "../../components/Carrousel/Carrousel";
 export const Comic = () => {
   const [loaderState, setLoaderState] = useState(true);
   const [comics, setComics] = useState([]);
-  const [comicsPerPage, setComicsPerPage] = useState(10);
+  const [comicsPerPage, setComicsPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalComics = comics.length;
@@ -65,17 +65,17 @@ export const Comic = () => {
                 comics?.slice(firstIndex, lastIndex).map((element) => (
                   <div
                     key={element.id}
-                    className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg "
+                    className="w-32 m-2 h-56 md:w-1/5 xl:w-[250px] md:min-h-[300px] lg:h-[400px] md:m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden  "
                   >
                     <img
-                      className="w-full h-72"
+                      className="w-full h-28 md:h-56 xl:h-72 mb-1"
                       src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                       alt=""
                     />
 
-                    <div className="w-full h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
+                    <div className="w-full min-h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
                       <Link to={`/ComicDetail/${element.id}`}>
-                        <h2 className="text-center  font-semibold p-1 ">
+                        <h2 className="text-center text-sm  md:font-semibold p-1 ">
                           {element.title}
                         </h2>
                       </Link>

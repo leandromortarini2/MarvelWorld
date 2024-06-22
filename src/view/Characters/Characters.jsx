@@ -53,22 +53,22 @@ export const Characters = () => {
       {loaderState ? (
         <Loader />
       ) : (
-        <div className="w-full flex flex-wrap justify-center items-center">
+        <div className="w-full flex flex-wrap justify-center">
           {characters.length > 0
             ? characters.slice(firstIndex, lastIndex).map((character) => (
                 <div
                   key={character.id}
-                  className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg"
+                  className="w-32 m-2 h-56 md:w-1/5 xl:w-[250px] md:min-h-[300px] lg:h-[400px] md:m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden  "
                 >
                   {character.thumbnail && (
                     <img
-                      className="w-full h-72"
+                      className="w-full h-28 md:h-56 xl:h-72 mb-1"
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                     />
                   )}
-                  <div className="w-full h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
+                  <div className="w-full min-h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
                     <Link to={`/CharacterDetail/${character.id}`}>
-                      <h2 className="text-center font-semibold p-1">
+                      <h2 className="text-center text-sm  md:font-semibold p-1 ">
                         {character.name}
                       </h2>
                     </Link>

@@ -20,7 +20,7 @@ export const CharacterDetail = () => {
 
   // BUTTONS
 
-  const [buttonComic, setButtonComic] = useState(true);
+  const [buttonComic, setButtonComic] = useState(false);
   const [buttonEvents, setButtonEvents] = useState(false);
   const [buttonSeries, setButtonSeries] = useState(false);
   const [buttonStories, setButtonStories] = useState(false);
@@ -41,7 +41,7 @@ export const CharacterDetail = () => {
   };
 
   // paginacion comic
-  const [comicsPerPage, setComicsPerPage] = useState(4);
+  const [comicsPerPage, setComicsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalComics = comics?.length;
@@ -133,11 +133,11 @@ export const CharacterDetail = () => {
 
   return (
     <>
-      <div className="w-full  min-h-screen flex justify-start items-start bg-gray-800 ">
+      <div className="w-full  min-h-screen flex flex-col  justify-start items-start bg-gray-800 ">
         {/* CONTAINER IZQ */}
         {/* CONTAINER IZQ */}
         {/* CONTAINER IZQ */}
-        <div className="w-1/4 min-h-screen  bg-white">
+        <div className="w-full    bg-white">
           <div className="w-full flex  justify-start items-start flex-wrap  ">
             {/* personaje */}
             {/* personaje */}
@@ -150,10 +150,10 @@ export const CharacterDetail = () => {
                     >
                       <div className="w-full  bg-Marvel flex flex-col items-center justify-center p-4">
                         <img
-                          className="w-52 ShadowEffect2 rounded-full mr-5 border-4 border-white"
+                          className="w-14 md:w-40 lg:w-52 ShadowEffect2 rounded-full border-4 border-white"
                           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                         />{" "}
-                        <h1 className="text-6xl font-bold text-center text-white ShadowEffect2">
+                        <h1 className=" text-xl lg:text-6xl font-bold text-center text-white ShadowEffect2">
                           {character.name}
                         </h1>
                       </div>
@@ -165,10 +165,10 @@ export const CharacterDetail = () => {
           {/* container buttons */}
           {/* container buttons */}
           {/* container buttons */}
-          <div className="w-full h-[400px] flex flex-col justify-evenly items-center flex-wrap bg-white  ">
+          <div className="w-full h-20   flex  justify-evenly items-center flex-wrap bg-white">
             <button
               onClick={handleButtonComic}
-              className={`w-3/4 h-12  text-white font-bold xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
+              className={` m-1  w-1/3 md:w-1/6  h-8 lg:h-12  text-white font-bold md:text-md xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
                 buttonComic === true ? "bg-Marvel" : " bg-gray-500"
               }`}
             >
@@ -176,19 +176,25 @@ export const CharacterDetail = () => {
             </button>
             <button
               onClick={handleButtonEvents}
-              className="w-3/4 h-12 bg-gray-500   text-white font-bold xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg"
+              className={`  m-1 w-1/3 md:w-1/6  h-8 lg:h-12  text-white font-bold md:text-md xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
+                buttonEvents === true ? "bg-Marvel" : " bg-gray-500"
+              }`}
             >
               events
             </button>
             <button
               onClick={handleButtonSeries}
-              className="w-3/4 h-12 bg-gray-500   text-white font-bold xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg"
+              className={` m-1 w-1/3 md:w-1/6  h-8 lg:h-12  text-white font-bold md:text-md xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
+                buttonSeries === true ? "bg-Marvel" : " bg-gray-500"
+              }`}
             >
               series
             </button>
             <button
               onClick={handleButtonStorie}
-              className="w-3/4 h-12 bg-gray-500   text-white font-bold xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg"
+              className={` m-1 w-1/3 md:w-1/6   h-8 lg:h-12  text-white font-bold md:text-md xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
+                buttonStories === true ? "bg-Marvel" : " bg-gray-500"
+              }`}
             >
               stories
             </button>
@@ -198,33 +204,33 @@ export const CharacterDetail = () => {
         {/* comic 2  */}
         {/* comic 2  */}
         {buttonComic === true ? (
-          <div className="w-full min-h-screen mt-5 p-2 flex flex-col items-center justify-start   ShadowEffect2   ">
-            <div className="w-3/5 bg-Marvel flex justify-center items-center  ">
+          <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start   ShadowEffect2  ">
+            <div className="hidden md:w-3/5 md:h-12 lg:h-20 bg-Marvel md:flex justify-center items-center  ">
               {" "}
-              <h2 className="text-white font-bold text-[80px] uppercase ShadowEffect2">
+              <h2 className="text-white font-bold md:text-3xl lg:text-[50px] xl:text-[80px] uppercase ShadowEffect2">
                 comic
               </h2>
             </div>
 
-            <div className="w-full min-h-[450px] flex flex-wrap justify-evenly ">
+            <div className="w-full lg:min-h-[450px] flex flex-wrap justify-evenly md:mt-2  lg:mt-5">
               {comics?.length > 0 ? (
                 comics
                   .map((comic) => {
                     return (
                       <div
                         key={comic.id}
-                        className="xl:w-[250px] h-[400px] m-4 flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden rounded-lg "
+                        className={`w-32 m-2  md:w-1/5 md:h-[300px] lg:h-[320px] xl:h-[400px] xl:w-[250px]   flex flex-col items-center justify-evenly  ShadowEffect hover:scale-110 duration-1000 overflow-hidden `}
                       >
                         <img
-                          className="w-full h-72"
+                          className="w-full h-28 md:h-56 xl:h-72 mb-1"
                           src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                         />
-                        <div className="w-full h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
+                        <div className=" w-full min-h-20 bg-gray-700 hover:bg-Marvel duration-1000 text-white capitalize flex justify-center items-center">
                           {" "}
                           <Link to={`/ComicDetail/${comic.id}`}>
-                            <p className="text-white text-center text-md ShadowEffect2  ">
+                            <h2 className="text-center text-sm md:text-xs lg:font-semibold p-1 ">
                               {comic.title}
-                            </p>
+                            </h2>
                           </Link>
                         </div>
                       </div>
