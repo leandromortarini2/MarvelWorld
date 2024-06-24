@@ -28,37 +28,105 @@ export const Home = () => {
         {/* cards */}
         {/* cards */}
         {/* cards */}
-        <div className="w-full h-80 flex justify-center bg-black  ">
-          <div className="card w-1/2 h-full">
+        <div className="w-full min-h-[300px] flex flex-wrap justify-evenly items-center  ">
+          {/* card 1 */}
+          {/* card 1 */}
+          {/* card 1 */}
+          <div className="card w-1/3 h-[300px] m-2 border-none ">
             <img
-              className="img "
-              src="https://cdn.marvel.com/content/1x/marvel-vs-capcom-fighting-collection-arcade-classics-announce-trailer-article-card.jpg"
+              className="img w-full ShadowEffect2"
+              src="https://mcdn.wallpapersafari.com/medium/24/55/kg5oQM.jpg"
               alt="Marvel vs Capcom"
             />
             <div className="textBox ">
-              <h2 className="text head text-white ShadowEffect2 text-3xl p-5">
-                MARVEL vs. CAPCOM Fighting Collection: Arcade Classics Brings
-                Seven Timeless Games in an All-in-One Package
+              <h2 className="text head text-white ShadowEffect2 text-3xl p-5 capitalize">
+                Here you will find the bravest superheroes in the universe{" "}
               </h2>
-              <Link to="https://www.marvel.com/articles/games/marvel-vs-capcom-fighting-collection-arcade-classics-announce-trailer">
+
+              <Link to="/Characters">
                 <button className="w-20 h-10 bg-Marvel text-white rounded-lg hover:bg-red-800">
                   info
                 </button>
               </Link>
             </div>
           </div>
-          <div className="card w-1/2">
+          {/* card 2 */}
+          {/* card 2 */}
+          {/* card 2 */}
+          <div className="card w-1/4 h-[300px] m-2 border-none">
             <img
-              className="img "
-              src="https://cdn.marvel.com/content/1x/marvel-vs-capcom-fighting-collection-arcade-classics-announce-trailer-article-card.jpg"
+              className="img w-full"
+              src="https://wallpapers.com/images/hd/comic-background-ts89u0v8uw2idhkz.jpg"
               alt="Marvel vs Capcom"
             />
             <div className="textBox ">
-              <h2 className="text head text-white ShadowEffect2 text-3xl p-5">
-                MARVEL vs. CAPCOM Fighting Collection: Arcade Classics Brings
-                Seven Timeless Games in an All-in-One Package
+              <h2 className="text head text-white ShadowEffect2 text-3xl p-5 capitalize">
+                Find the most incredible comics and join the adventure with your
+                favorite heroes
               </h2>
-              <Link to="https://www.marvel.com/articles/games/marvel-vs-capcom-fighting-collection-arcade-classics-announce-trailer">
+              <Link to="/Comic">
+                <button className="w-20 h-10 bg-Marvel text-white rounded-lg hover:bg-red-800">
+                  info
+                </button>
+              </Link>
+            </div>
+          </div>
+          {/* card 3 */}
+          {/* card 3 */}
+          {/* card 3 */}
+          <div className="card w-1/3 h-[300px] m-2 border-none">
+            <img
+              className="img w-full"
+              src="https://s.yimg.com/ny/api/res/1.2/mLIL40ReVUjLE.5M_g1bWQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTMyMA--/https://media.zenfs.com/es/qore_584/34db14a3d5e27a46fead2fbda92233a9"
+              alt="Marvel vs Capcom"
+            />
+            <div className="textBox ">
+              <h2 className="text head text-white ShadowEffect2 text-3xl p-5 capitalize">
+                Here you will find the most successful Marvel series
+              </h2>
+              <Link to="/Series">
+                <button className="w-20 h-10 bg-Marvel text-white rounded-lg hover:bg-red-800">
+                  info
+                </button>
+              </Link>
+            </div>
+          </div>
+          {/* card 4 */}
+          {/* card 4 */}
+          {/* card 4 */}
+          <div className="card w-1/3 h-[300px] m-2 border-none  rounded-none ">
+            <img
+              className="img w-full"
+              src="https://www.coca-cola.com/content/dam/onexp/us/en/brands/coca-cola-original/epic/hp_slide/tccc_epicfansassemble_dt_us.png/width1338.png"
+              alt="Marvel vs Capcom"
+            />
+            <div className="textBox ">
+              <h2 className="text head text-white text-3xl p-5 capitalize">
+                Here you will find the most relevant Marvel stories{" "}
+              </h2>
+
+              <Link to="/Stories">
+                <button className="w-20 h-10 bg-Marvel text-white rounded-lg hover:bg-red-800">
+                  info
+                </button>
+              </Link>
+            </div>
+          </div>
+          {/* card 5 */}
+          {/* card 5 */}
+          {/* card 5 */}
+          <div className="card w-3/5 h-[300px] m-2 border-none  rounded-none ">
+            <img
+              className="img w-full"
+              src="https://c4.wallpaperflare.com/wallpaper/902/0/25/comics-marvel-comics-angel-marvel-comics-baron-zemo-wallpaper-preview.jpg"
+              alt="Marvel vs Capcom"
+            />
+            <div className="textBox ">
+              <h2 className="text head text-white ShadowEffect2 text-3xl p-5 capitalize">
+                Here you will find the most important Marvel events
+              </h2>
+
+              <Link to="/Events">
                 <button className="w-20 h-10 bg-Marvel text-white rounded-lg hover:bg-red-800">
                   info
                 </button>

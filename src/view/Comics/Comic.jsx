@@ -35,7 +35,7 @@ export const Comic = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col items-center bg-gray-800 pb-5">
+      <div className="w-full min-h-screen flex flex-col items-center bg-gray-200 pb-5">
         {/* BANNER */}
         <div className="hidden md:w-full bg-Marvel md:flex justify-center">
           <Example />
