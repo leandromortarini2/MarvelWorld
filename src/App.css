@@ -21,7 +21,6 @@ body {
 }
 
 .card {
-  background: #111010;
   display: flex;
   flex-direction: column;
   align-items: center;

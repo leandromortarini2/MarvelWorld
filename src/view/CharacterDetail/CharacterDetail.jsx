@@ -19,7 +19,7 @@ export const CharacterDetail = () => {
   const [series, setSeries] = useState(null);
 
   // BUTTONS
-  const [buttonComic, setButtonComic] = useState(false);
+  const [buttonComic, setButtonComic] = useState(true);
   const [buttonEvents, setButtonEvents] = useState(false);
   const [buttonSeries, setButtonSeries] = useState(false);
 
