@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col  items-center bg-gray-800">
+      <div className="w-full min-h-screen flex flex-col  items-center bg-gray-200">
         <div className="hidden md:w-full bg-Marvel md:flex   justify-center">
           <Example />
           <img
@@ -35,7 +35,7 @@ export const Home = () => {
           <div className="card w-1/3 h-[300px] m-2 border-none ">
             <img
               className="img w-full ShadowEffect2"
-              src="https://mcdn.wallpapersafari.com/medium/24/55/kg5oQM.jpg"
+              src="https://cdn.marvel.com/content/1x/mi_wallpaper_mas_dsk_01.jpg"
               alt="Marvel vs Capcom"
             />
             <div className="textBox ">
@@ -56,7 +56,7 @@ export const Home = () => {
           <div className="card w-1/4 h-[300px] m-2 border-none">
             <img
               className="img w-full"
-              src="https://wallpapers.com/images/hd/comic-background-ts89u0v8uw2idhkz.jpg"
+              src="https://wallpaper.dog/large/20515514.jpg"
               alt="Marvel vs Capcom"
             />
             <div className="textBox ">
@@ -97,7 +97,7 @@ export const Home = () => {
           <div className="card w-1/3 h-[300px] m-2 border-none  rounded-none ">
             <img
               className="img w-full"
-              src="https://www.coca-cola.com/content/dam/onexp/us/en/brands/coca-cola-original/epic/hp_slide/tccc_epicfansassemble_dt_us.png/width1338.png"
+              src="https://images5.alphacoders.com/500/thumb-1920-500832.jpg"
               alt="Marvel vs Capcom"
             />
             <div className="textBox ">
