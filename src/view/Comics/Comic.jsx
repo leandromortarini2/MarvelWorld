@@ -35,9 +35,9 @@ export const Comic = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col items-center bg-gray-800 pb-5">
+      <div className="w-full min-h-screen flex flex-col items-center bg-gray-100 pb-5">
         {/* BANNER */}
-        <div className="hidden md:w-full bg-Marvel md:flex justify-center">
+        <div className="hidden md:w-full bg-Marvel md:flex justify-center ShadowEffect2">
           <Example />
           <div className="w-1/2 flex justify-center items-center">
             <h2 className="md:text-[100px] lg:text-[150px] xl:text-[200px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
@@ -60,7 +60,7 @@ export const Comic = () => {
           {loaderState === true ? (
             <Loader />
           ) : (
-            <div className="w-full flex flex-wrap justify-center">
+            <div className="w-full flex flex-wrap justify-center ShadowEffect2">
               {comics?.length > 0 ? (
                 comics?.slice(firstIndex, lastIndex).map((element) => (
                   <div

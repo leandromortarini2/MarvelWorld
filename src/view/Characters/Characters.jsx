@@ -32,8 +32,8 @@ export const Characters = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-800 pb-5">
-      <div className="hidden md:w-full bg-Marvel md:flex justify-center">
+    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-200 pb-5">
+      <div className="hidden md:w-full bg-Marvel md:flex justify-center ShadowEffect2">
         <Example />
         <div className="w-1/2 flex justify-center items-center">
           <h2 className="md:text-[60px] lg:text-[80px] xl:text-[110px] text-white uppercase font-bold ShadowEffect2">
@@ -53,7 +53,7 @@ export const Characters = () => {
       {loaderState ? (
         <Loader />
       ) : (
-        <div className="w-full flex flex-wrap justify-center">
+        <div className="w-full flex flex-wrap justify-center ShadowEffect2">
           {characters.length > 0
             ? characters.slice(firstIndex, lastIndex).map((character) => (
                 <div

@@ -65,6 +65,15 @@ export const getComicCharacters = async (id, limit = 99) => {
   return data2;
 };
 
+export const getComicEvents = async (id, limit = 99) => {
+  const response = await axios.get(
+    `https://gateway.marvel.com/v1/public/comics/${id}/events?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${limit}`
+  );
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+
 // PERSONAJES
 // PERSONAJES
 // PERSONAJES

@@ -86,7 +86,7 @@ export const CharacterDetail = () => {
       {loaderState ? (
         <Loader />
       ) : (
-        <div className="w-full min-h-screen flex flex-col justify-start items-start bg-gray-800">
+        <div className="w-full min-h-screen flex flex-col justify-start items-start bg-gray-100">
           {/* CONTAINER 1 */}
           <div className="w-full bg-white">
             <div className="w-full flex justify-start items-start flex-wrap">
