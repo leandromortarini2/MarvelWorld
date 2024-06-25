@@ -5,8 +5,8 @@ import { Home } from "./view/Home/Home";
 import { Comic } from "./view/Comics/Comic";
 import { ComicDetail } from "./view/ComicDetail/ComicDetail";
 import { CharacterDetail } from "./view/CharacterDetail/CharacterDetail";
-
 import { Serie } from "./view/Serie/Serie";
+import { Event } from "./view/Event/Event";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           element={<CharacterDetail />}
         ></Route>
         <Route path="/Serie" element={<Serie />}></Route>
+        <Route path="/Event" element={<Event />}></Route>
       </Routes>
       {/* <Characters /> */}
     </>

@@ -16,7 +16,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className="w-full h-14 bg-white flex justify-evenly shadow-black shadow-2xl ">
+      <div className="w-full h-14 bg-gray-900 flex justify-evenly shadow-black shadow-2xl ">
         {/* CONTAINER MARCA/LOGO */}
         <div className="w-1/2 sm:w-1/4 h-14 flex items-center justify-center">
           <img
@@ -40,37 +40,31 @@ export const NavBar = () => {
         {/* CONTAINER BOTONERA */}
         <div className="hidden w-1/2 h-14 lg:flex justify-evenly items-center">
           <Link to="/">
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
               Home
             </button>
           </Link>
           <Link to="/Comic">
             {" "}
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
               Comic
             </button>
           </Link>{" "}
           <Link to="/Characters">
             {" "}
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
               Character
             </button>
           </Link>
           <Link to="/Serie">
             {" "}
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
               Serie
-            </button>
-          </Link>
-          <Link to="/Stories">
-            {" "}
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none capitalize ">
-              stories
             </button>
           </Link>
           <Link to="/Event">
             {" "}
-            <button className="xl:text-2xl text-Marvel font-bold duration-1000 hover:text-red-800 hover:scale-110 bg-transparent border-none ">
+            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
               Event
             </button>
           </Link>

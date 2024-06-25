@@ -79,7 +79,7 @@ export const ComicDetail = () => {
                   {/* container 2  */}
                   {/* container 2  */}
                   <div className="w-full   flex justify-center">
-                    <div className="w-1/3 flex justify-center items-center bg-black ">
+                    <div className="w-1/3 flex justify-center items-center ">
                       <img
                         className="w-full mt-2 ShadowEffect2"
                         src={`${element.thumbnail.path}.${element.thumbnail.extension}`}

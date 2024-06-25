@@ -137,3 +137,37 @@ export const getCharacterStories = async (id) => {
   const data2 = data.data;
   return data2;
 };
+
+// SERIES
+// SERIES
+// SERIES
+// SERIES
+// SERIES
+// SERIES
+
+export const getSeries = async () => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/series?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
+
+// EVENTS
+// EVENTS
+// EVENTS
+// EVENTS
+// EVENTS
+// EVENTS
+
+export const getEvent = async () => {
+  const response = await axios.get(
+    `https://gateway.marvel.com:443/v1/public/events?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+  );
+
+  const data = response.data;
+  const data2 = data.data;
+  return data2;
+};
