@@ -68,3 +68,8 @@ body {
   filter: blur(100px);
   animation: anim 3s infinite;
 }
+
+.imgDifuminado {
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+  mask-image: linear-gradient(to right, black, transparent);
+}

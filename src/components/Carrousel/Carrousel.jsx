@@ -75,7 +75,7 @@ function Example(args) {
           <img
             src={item.src}
             alt={item.altText}
-            className="w-3/4  lg:w-1/2 p-4 overflow-hidden ShadowEffect2"
+            className="w-3/4  lg:w-1/2 xl:h-[550px] p-4 overflow-hidden ShadowEffect2"
           />
           <div className="w-full sm:w-1/2 h-[170px]  flex flex-col items-center justify-center md:justify-evenly ">
             {" "}
