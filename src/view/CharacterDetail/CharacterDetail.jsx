@@ -86,9 +86,9 @@ export const CharacterDetail = () => {
       {loaderState ? (
         <Loader />
       ) : (
-        <div className="w-full min-h-screen flex flex-col justify-start items-start bg-gray-100">
+        <div className="w-full min-h-screen flex flex-col justify-start items-start bg-gray-800">
           {/* CONTAINER 1 */}
-          <div className="w-full bg-white">
+          <div className="w-full">
             <div className="w-full flex justify-start items-start flex-wrap">
               {/* Personaje */}
               {character?.length > 0 &&
@@ -97,9 +97,9 @@ export const CharacterDetail = () => {
                     key={character.id}
                     className="w-full flex flex-col items-center justify-center"
                   >
-                    <div className="w-full bg-Marvel flex flex-col items-center justify-center p-4">
+                    <div className="w-full  bg-gray-800 flex flex-col items-center justify-center p-4">
                       <img
-                        className="w-14 md:w-40 lg:w-52 ShadowEffect2 rounded-full border-4 border-white"
+                        className="w-24 md:w-40 lg:w-52 ShadowEffect2 rounded-full border-4 border-white"
                         src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                         alt={character.name}
                       />
@@ -112,7 +112,7 @@ export const CharacterDetail = () => {
             </div>
 
             {/* Container buttons */}
-            <div className="w-full h-20 flex justify-evenly items-center flex-wrap bg-white">
+            <div className="w-full h-20 flex justify-evenly items-center flex-wrap  bg-gray-800">
               <button
                 onClick={handleButtonComic}
                 className={`m-1 w-1/3 md:w-1/6 h-8 lg:h-12 text-white font-bold md:text-md xl:text-3xl uppercase tracking-wide duration-1000 hover:bg-Marvel rounded-lg ${
@@ -142,12 +142,7 @@ export const CharacterDetail = () => {
 
           {/* Comic */}
           {buttonComic && (
-            <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start ShadowEffect2">
-              <div className="hidden md:w-3/5 md:h-12 lg:h-20 bg-Marvel md:flex justify-center items-center">
-                <h2 className="text-white font-bold md:text-3xl lg:text-[50px] xl:text-[80px] uppercase ShadowEffect2">
-                  Comic
-                </h2>
-              </div>
+            <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start ShadowEffect2 bg-gray-600">
               {loaderState ? (
                 <Loader />
               ) : (
@@ -192,12 +187,7 @@ export const CharacterDetail = () => {
 
           {/* Events */}
           {buttonEvents && (
-            <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start ShadowEffect2">
-              <div className="hidden md:w-3/5 md:h-12 lg:h-20 bg-Marvel md:flex justify-center items-center">
-                <h2 className="text-white font-bold md:text-3xl lg:text-[50px] xl:text-[80px] uppercase ShadowEffect2">
-                  Events
-                </h2>
-              </div>
+            <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start ShadowEffect2 bg-gray-600">
               {loaderState ? (
                 <Loader />
               ) : (
@@ -243,15 +233,10 @@ export const CharacterDetail = () => {
           {/* Series */}
           {buttonSeries && (
             <div className="w-full min-h-screen lg:mt-5 p-2 flex flex-col items-center justify-start ShadowEffect2">
-              <div className="hidden md:w-3/5 md:h-12 lg:h-20 bg-Marvel md:flex justify-center items-center">
-                <h2 className="text-white font-bold md:text-3xl lg:text-[50px] xl:text-[80px] uppercase ShadowEffect2">
-                  Series
-                </h2>
-              </div>
               {loaderState ? (
                 <Loader />
               ) : (
-                <div className="w-full lg:min-h-[450px] flex flex-wrap justify-evenly md:mt-2 lg:mt-5">
+                <div className="w-full lg:min-h-[450px] flex flex-wrap justify-evenly md:mt-2 lg:mt-5 bg-gray-600">
                   {series?.length > 0 ? (
                     series.slice(firstIndex, lastIndex).map((serie) => (
                       <div
