@@ -8,6 +8,48 @@ import { Link } from "react-router-dom";
 export const NavBar = () => {
   const [burger, setBurger] = useState(false);
 
+  const [home, setHome] = useState(false);
+  const [event, setEvent] = useState(false);
+  const [comic, setComic] = useState(false);
+  const [character, setCharacter] = useState(false);
+  const [serie, setSerie] = useState(false);
+
+  const handleHome = () => {
+    setHome(!home);
+    setEvent(false);
+    setComic(false);
+    setCharacter(false);
+    setSerie(false);
+  };
+  const handleEvent = () => {
+    setEvent(!event);
+    setHome(false);
+    setComic(false);
+    setCharacter(false);
+    setSerie(false);
+  };
+  const handleComic = () => {
+    setComic(!comic);
+    setHome(false);
+    setEvent(false);
+    setCharacter(false);
+    setSerie(false);
+  };
+  const handleCharacter = () => {
+    setCharacter(!character);
+    setHome(false);
+    setEvent(false);
+    setComic(false);
+    setSerie(false);
+  };
+  const handleSerie = () => {
+    setSerie(!serie);
+    setHome(false);
+    setEvent(false);
+    setComic(false);
+    setCharacter(false);
+  };
+
   // manejador de hamburguesa
   const handleBurger = (event) => {
     event.preventDefault();
@@ -40,32 +82,57 @@ export const NavBar = () => {
         {/* CONTAINER BOTONERA */}
         <div className="hidden w-1/2 h-14 lg:flex justify-evenly items-center">
           <Link to="/">
-            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
+            <button
+              onClick={handleHome}
+              className={`xl:text-2xl ${
+                home === false ? "text-gray-500" : "text-Marvel"
+              }  font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none `}
+            >
               Home
+            </button>
+          </Link>{" "}
+          <Link to="/Event">
+            {" "}
+            <button
+              onClick={handleEvent}
+              className={`xl:text-2xl ${
+                event === false ? "text-gray-500" : "text-Marvel"
+              }  font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none `}
+            >
+              Event
             </button>
           </Link>
           <Link to="/Comic">
             {" "}
-            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
+            <button
+              onClick={handleComic}
+              className={`xl:text-2xl ${
+                comic === false ? "text-gray-500" : "text-Marvel"
+              }  font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none `}
+            >
               Comic
             </button>
           </Link>{" "}
           <Link to="/Characters">
             {" "}
-            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
+            <button
+              onClick={handleCharacter}
+              className={`xl:text-2xl ${
+                character === false ? "text-gray-500" : "text-Marvel"
+              }  font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none `}
+            >
               Character
             </button>
           </Link>
           <Link to="/Serie">
             {" "}
-            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
+            <button
+              onClick={handleSerie}
+              className={`xl:text-2xl ${
+                serie === false ? "text-gray-500" : "text-Marvel"
+              }  font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none `}
+            >
               Serie
-            </button>
-          </Link>
-          <Link to="/Event">
-            {" "}
-            <button className="xl:text-2xl text-gray-500 font-bold duration-1000 hover:text-white hover:scale-110 bg-transparent border-none ">
-              Event
             </button>
           </Link>
         </div>
@@ -73,15 +140,20 @@ export const NavBar = () => {
 
       {/* CONTAINER MENU BURGER */}
       {burger && (
-        <div className="w-full bg-Marvel min-h-80 lg:hidden absolute z-20 flex flex-col justify-evenly items-center">
+        <div className="w-full bg-gray-900 min-h-80 lg:hidden absolute z-20 flex flex-col justify-evenly items-center">
           <Link to="/">
             <button className="text-lg text-white font-medium duration-1000  hover:scale-110  bg-transparent border-none">
               Home
             </button>
           </Link>
+          <Link to="/Event">
+            <button className="text-lg text-white font-medium duration-1000  hover:scale-110 bg-transparent border-none">
+              Event
+            </button>
+          </Link>
           <Link to="/Comic">
             {" "}
-            <button className="text-lg text-white font-medium duration-1000  hover:scale-110 bg-transparent border-none">
+            <button className="text-lg text-white font-medium duration-1000  hover:scale-110  bg-transparent border-none">
               Comic
             </button>
           </Link>{" "}
@@ -94,11 +166,6 @@ export const NavBar = () => {
           <Link to="/Serie">
             <button className="text-lg text-white font-medium duration-1000  hover:scale-110 bg-transparent border-none">
               Serie
-            </button>
-          </Link>
-          <Link to="/Event">
-            <button className="text-lg text-white font-medium duration-1000  hover:scale-110 bg-transparent border-none">
-              Event
             </button>
           </Link>
         </div>

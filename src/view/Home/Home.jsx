@@ -92,9 +92,9 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          {/* card 2 */}
-          {/* card 2 */}
-          {/* card 2 */}
+          {/* card 2 Character */}
+          {/* card 2 Character */}
+          {/* card 2  Character*/}
           <div className="hidden full   md:m-2 md:flex    lg:h-[300px] justify-center bg-gray-800 ShadowEffect2">
             <div className="w-1/2 h-52  lg:h-[300px] ">
               <img
@@ -124,9 +124,9 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          {/* celu */}
-          {/* celu */}
-          {/* celu */}
+          {/* celu Character*/}
+          {/* celu Character*/}
+          {/* celu Character*/}
           <div className="w-full min-h-[300px]  flex flex-col justify-center md:hidden bg-gray-800">
             <div className="w-full  ">
               {" "}
@@ -157,9 +157,9 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          {/* card 3 */}
-          {/* card 3 */}
-          {/* card 3 */}
+          {/* card 3 Events*/}
+          {/* card 3 Events*/}
+          {/* card 3 Events*/}
           <div className="hidden full   md:m-2 md:flex    lg:h-[300px] justify-center bg-gray-800 ShadowEffect2">
             <div className="w-1/2 h-52  lg:h-[300px] ">
               <img
@@ -188,9 +188,9 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          {/* celu */}
-          {/* celu */}
-          {/* celu */}
+          {/* celu Events*/}
+          {/* celu Events*/}
+          {/* celu Events*/}
           <div className="w-full min-h-[300px]  flex flex-col justify-center md:hidden bg-gray-800">
             <div className="w-full  ">
               {" "}
@@ -204,7 +204,7 @@ export const Home = () => {
               <div>
                 {" "}
                 <h2 className=" text-gray-200 font-bold  text-2xl  text-center capitalize">
-                  Comic section
+                  Events
                 </h2>
                 <p className=" text-gray-300 font-semibold  text-lg text-center p-2 capitalize">
                   Here you can find all the epic events of the Marvel universe!
@@ -268,7 +268,7 @@ export const Home = () => {
               <div>
                 {" "}
                 <h2 className=" text-gray-200 font-bold  text-2xl  text-center capitalize">
-                  Series section
+                  Series
                 </h2>
                 <p className=" text-gray-300 font-semibold  text-lg text-center p-2 capitalize">
                   Here you can find all the series from the Marvel universe!

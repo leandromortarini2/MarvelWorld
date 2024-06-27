@@ -12,37 +12,45 @@ import { Link } from "react-router-dom";
 
 const items = [
   {
-    src: "https://i.annihil.us/u/prod/marvel/i/mg/c/b0/4bc6494ed6eb4.jpg",
-    enlase: "/ComicDetail/1749",
-    title: "X-MEN - AGE OF APOCALYPSE",
-    anio: 2004,
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5261675f6b22f.jpg",
+    enlase: "/CharacterDetail/1009515",
+    title: "The Punisher",
     key: 1,
   },
   {
-    src: "https://i.annihil.us/u/prod/marvel/i/mg/f/20/4bc63a47b8dcb.jpg",
-    enlase: "/ComicDetail/1994",
-    title: "TEAMS",
-    anio: 2004,
-
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg",
+    enlase: "/CharacterDetail/1009368",
+    title: "Iron Man",
     key: 2,
   },
   {
-    src: "https://i.annihil.us/u/prod/marvel/i/mg/9/60/591deb9a803d2.jpg",
-    enlase: "/ComicDetail/13947",
-    title: "UNCANNY X-MEN",
-    anio: 1963,
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/2/60/537bcaef0f6cf.jpg",
+    enlase: "/CharacterDetail/1009718",
+    title: "Wolverine",
     key: 3,
   },
   {
-    src: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/4bc64df4105b9.jpg",
-    enlase: "/ComicDetail/1689",
-    title: "MARVEL KNIGHTS",
-    anio: 2004,
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/3/50/531771b4e8c60.jpg",
+    enlase: "/CharacterDetail/1011010",
+    title: "Spider-Man",
     key: 4,
+  },
+  {
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg",
+    enlase: "/CharacterDetail/1009351",
+    title: "Hulk",
+    key: 4,
+  },
+  {
+    src: "https://i.annihil.us/u/prod/marvel/i/mg/9/60/50febc4f55525.jpg",
+    enlase: "/CharacterDetail/1009299",
+    title: "Fantastic Four",
+
+    key: 5,
   },
 ];
 
-function Example(args) {
+function CarrouselCharacter(args) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -75,19 +83,16 @@ function Example(args) {
           <img
             src={item.src}
             alt={item.altText}
-            className="w-3/4  lg:w-1/2 xl:h-[550px] p-4 overflow-hidden ShadowEffect2"
+            className="h-[260px]  lg:h-[380px] xl:h-[550px] p-4 overflow-hidden ShadowEffect2"
           />
           <div className="w-full sm:w-1/2 h-[170px]  flex flex-col items-center justify-center md:justify-evenly ">
             {" "}
-            <h3 className="text-white text-center font-bold text-lg sm:text-xl ShadowEffect2 mb-2">
+            <h3 className="text-white text-center font-bold text-lg sm:text-xl xl:text-5xl ShadowEffect2 mb-2">
               {item.title}
             </h3>
-            <p className="text-white text-center font-bold text-lg sm:text-xl ShadowEffect2 mb-2">
-              {item.anio}
-            </p>
             <Link to={item.enlase}>
-              <button className="w-32 h-9 lg:w-40 sm:h-10 text-white bg-red-800 capitalize  font-bold text-xl rounded-lg hover:bg-Marvel hover:scale-110 duration-1000  shadow-md shadow-black lg:ShadowEffect2 mb-4">
-                see comic
+              <button className="w-40 h-9 lg:w-40 sm:h-10 text-white bg-red-800 capitalize  font-bold text-xl rounded-lg hover:bg-Marvel hover:scale-110 duration-1000  shadow-md shadow-black lg:ShadowEffect2 mb-4">
+                see Character
               </button>
             </Link>
           </div>
@@ -131,4 +136,4 @@ function Example(args) {
   );
 }
 
-export default Example;
+export default CarrouselCharacter;

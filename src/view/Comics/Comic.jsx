@@ -53,10 +53,15 @@ export const Comic = () => {
 
         {/* celu BANNER */}
         <div className="w-full md:hidden bg-gray-800 flex flex-col  justify-center">
-          <div className="w-full md:w-1/4  flex justify-center items-center ">
+          <div className="w-full md:w-1/4  flex flex-col justify-center items-center ">
             <h2 className="text-2xl mt-2 text-center md:text-[100px] text-white font-bold uppercase ShadowEffect2 ">
               Most popular comic
             </h2>
+            <p className="text-lg lg:text-xl text-center text-gray-300 font-semibold capitalize ShadowEffect2 p-2 ">
+              Here you can find the most exciting comics in the Marvel
+              universe!From the epic adventures of the Avengers to the heroic
+              exploits of Spider-Man.
+            </p>
           </div>{" "}
           <Example />
         </div>

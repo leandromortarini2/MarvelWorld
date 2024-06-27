@@ -3,7 +3,7 @@ import { getCharacters } from "../../helpers/solicitudes";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Pagination } from "../../components/Pagination/Pagination";
-import Example from "../../components/Carrousel/Carrousel";
+import CarrouselCharacter from "../../components/CarrouselCharacter/CarrouselCharacter";
 import Loader from "../../components/Loader/Loader";
 
 export const Characters = () => {
@@ -32,23 +32,34 @@ export const Characters = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-200 pb-5">
-      <div className="hidden md:w-full bg-Marvel md:flex justify-center ShadowEffect2">
-        <Example />
-        <div className="w-1/2 flex justify-center items-center">
-          <h2 className="md:text-[60px] lg:text-[80px] xl:text-[110px] text-white uppercase font-bold ShadowEffect2">
-            Character
+    <div className="w-full min-h-screen flex flex-wrap justify-evenly bg-gray-600 pb-5">
+      <div className="hidden w-full lg:h-[400px] xl:min-h-[600px]  bg-gray-800 md:flex  justify-around lg:justify-center ">
+        <div className="w-1/3  flex flex-col justify-center items-center ">
+          <h2 className="md:text-3xl lg:text-5xl xl:text-[60px]  text-white font-bold uppercase ShadowEffect2 ">
+            Character section
           </h2>
+          <p className="md:text-md lg:text-xl  text-white font-bold capitalize ShadowEffect2 p-2 ">
+            Here you can find all the characters from the Marvel universe! From
+            iconic superheroes like Iron Man and Captain America to scheming
+            villains like Thanos and Loki.
+          </p>
         </div>
+        <CarrouselCharacter />
       </div>
-      {/* celu */}
-      <div className="w-full md:hidden bg-Marvel flex flex-col justify-center">
-        <div className="w-full flex justify-center items-center md:hidden">
-          <h2 className="text-[50px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
-            Character
+
+      {/* celu BANNER */}
+      <div className="w-full md:hidden bg-gray-800 flex flex-col  justify-center">
+        <div className="w-full md:w-1/4  flex flex-col justify-center items-center ">
+          <h2 className="text-2xl mt-2 text-center md:text-[100px] text-white font-bold uppercase ShadowEffect2 ">
+            Character section
           </h2>
-        </div>
-        <Example />
+          <p className="text-lg lg:text-xl text-center text-gray-300 font-semibold capitalize ShadowEffect2 p-2 ">
+            Here you can find all the characters from the Marvel universe! From
+            iconic superheroes like Iron Man and Captain America to scheming
+            villains like Thanos and Loki.
+          </p>
+        </div>{" "}
+        <CarrouselCharacter />
       </div>
       {loaderState ? (
         <Loader />
