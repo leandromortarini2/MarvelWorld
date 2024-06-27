@@ -35,27 +35,31 @@ export const Comic = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col items-center bg-gray-100 pb-5">
+      <div className="w-full min-h-screen flex flex-col items-center bg-gray-600 pb-5">
         {/* BANNER */}
-        <div className="hidden md:w-full bg-Marvel md:flex justify-center ShadowEffect2">
-          <Example />
-          <div className="w-1/2 flex justify-center items-center">
-            <h2 className="md:text-[100px] lg:text-[150px] xl:text-[200px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
-              comic
+        <div className="hidden w-full lg:h-[400px] xl:min-h-[600px]  bg-gray-800 md:flex  justify-around lg:justify-center ">
+          <div className="w-1/3  flex flex-col justify-center items-center ">
+            <h2 className="text-5xl lg:text-[85px]  text-white font-bold uppercase ShadowEffect2 ">
+              comic section
             </h2>
+            <p className="text-lg lg:text-xl  text-white font-bold capitalize ShadowEffect2 p-2 ">
+              Here you can find the most exciting comics in the Marvel
+              universe!From the epic adventures of the Avengers to the heroic
+              exploits of Spider-Man.
+            </p>
           </div>
+          <Example />
         </div>
 
         {/* celu BANNER */}
-        <div className="w-full md:hidden bg-Marvel flex flex-col justify-center">
-          <div className="w-full flex justify-center items-center md:hidden">
-            <h2 className="text-[80px] text-white uppercase font-bold tracking-tighter ShadowEffect2">
-              comic
+        <div className="w-full md:hidden bg-gray-800 flex flex-col  justify-center">
+          <div className="w-full md:w-1/4  flex justify-center items-center ">
+            <h2 className="text-2xl mt-2 text-center md:text-[100px] text-white font-bold uppercase ShadowEffect2 ">
+              Most popular comic
             </h2>
-          </div>
+          </div>{" "}
           <Example />
         </div>
-
         <div className="w-full flex flex-col flex-wrap justify-center items-center">
           {loaderState === true ? (
             <Loader />
