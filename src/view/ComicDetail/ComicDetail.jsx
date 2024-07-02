@@ -31,7 +31,7 @@ export const ComicDetail = () => {
     try {
       const fetchData = async () => {
         const { results } = await getComicID(id);
-        console.log(results);
+        // console.log(results);
         setComic(results);
       };
       fetchData();
