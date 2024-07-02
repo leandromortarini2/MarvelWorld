@@ -19,7 +19,7 @@ export const ComicDetail = () => {
   // pagination
   // pagination
   // pagination
-  const [charactersPerPage, setComicsPerPage] = useState(5);
+  const [charactersPerPage, setComicsPerPage] = useState(7);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalComics = characters.length;
@@ -68,38 +68,36 @@ export const ComicDetail = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col justify-start items-start  bg-[url(https://cdn.marvel.com/content/1x/mi_wallpaper_mas_dsk_01.jpg)] bg-cover pb-5">
+      <div className="w-full min-h-screen flex flex-col justify-start items-start bg-gray-800 pb-5">
         {comic?.length > 0
           ? comic?.map((element) => {
               return (
                 <div
                   key={element.id}
-                  className="w-full  flex flex-col justify-center  "
+                  className="w-full  flex  justify-center  "
                 >
-                  {/* container 2  */}
-                  {/* container 2  */}
-                  <div className="w-full   flex justify-center">
-                    <div className="w-1/3 flex justify-center items-center ">
+                  <div className="w-3/4 lg:w-full xl:w-3/4   flex flex-col md:flex-row justify-center">
+                    {/* container 1 */}
+                    {/* container 1 */}
+
+                    <div className="w-full md:w-1/2 lg:w-1/3 flex justify-center items-center mb-5 pt-2">
                       <img
                         className="w-full mt-2 ShadowEffect2"
                         src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                         alt=""
                       />
                     </div>
-
-                    <div className="w-3/5 min-h-screen flex flex-col  items-center  mt-2 bg-gray-300   ">
-                      {/* container 1 */}
-                      {/* container 1 */}
-                      <div className="w-full  h-20   flex justify-center items-center p-4  bg-Marvel ">
-                        <div className="w-3/4">
-                          <h1 className="text-2xl font-bold text-center text-white uppercase tracking-wid ShadowEffect2">
-                            {element.title}
-                          </h1>
-                        </div>
-                      </div>{" "}
+                    {/* container 2  */}
+                    {/* container 2  */}
+                    <div className=" w-full md:w-1/2  flex flex-col  justify-evenly items-center  mb-5   ">
+                      <div className="w-full  ">
+                        <h1 className=" md:text-md md:ml-5 lg:ml-0 lg:text-lg p-2 xl:text-2xl font-bold xl:font-extrabold text-center text-white uppercase  tracking-wider ShadowEffect2 ">
+                          {element.title}
+                        </h1>
+                      </div>
                       {creator?.length > 0 ? (
-                        <div className="w-full h-32  flex flex-col justify-start items-center mt-5">
-                          <h3 className="text-2xl font-bold uppercase text-Marvel  tracking-wider mb-2  ">
+                        <div className="w-full min-h-32  flex flex-col justify-start items-center mt-2 md:mt-5 ">
+                          <h3 className="md:text-xl lg:text-2xl font-bold uppercase text-white  tracking-wider mb-2  ">
                             creators
                           </h3>
                           {creator
@@ -109,7 +107,7 @@ export const ComicDetail = () => {
                                   className="w-full flex justify-center "
                                   key={characterElement.id}
                                 >
-                                  <p className="text-xl font-semibold text-gray-800">
+                                  <p className="md:text-lg lg:text-2xl font-semibold  text-gray-400">
                                     {characterElement.fullName}
                                   </p>
                                 </div>
@@ -124,60 +122,20 @@ export const ComicDetail = () => {
                           </h3>
                         </div>
                       )}
-                      {characters?.length > 0 ? (
-                        <div className="w-full h-1/2 flex flex-col justify-center items-center ">
-                          <h3 className="text-3xl font-bold uppercase text-Marvel  tracking-wider text-center m-5 ">
-                            Characters
-                          </h3>
-                          <div className="w-3/4 flex justify-evenly flex-wrap  ">
-                            {characters
-                              .map((characterElement) => {
-                                return (
-                                  <div key={characterElement.id}>
-                                    <Link
-                                      to={`/CharacterDetail/${characterElement.id}`}
-                                    >
-                                      <img
-                                        className="w-20 h-20 shadow-lg hover:scale-110 duration-1000 m-2 ShadowEffect2"
-                                        src={`${characterElement.thumbnail.path}.${characterElement.thumbnail.extension}`}
-                                      />
-                                    </Link>
-                                  </div>
-                                );
-                              })
-                              .slice(firstIndex, lastIndex)}
-                            <div className="w-full">
-                              <Pagination
-                                comicsPerPage={charactersPerPage}
-                                currentPage={currentPage}
-                                setCurrentPage={setCurrentPage}
-                                totalComics={totalComics}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="w-full h-1/4 flex justify-center items-center ">
-                          <h3 className="text-Marvel text-2xl font-bold uppercase">
-                            no characters found
-                          </h3>
-                        </div>
-                      )}
+
                       {element.prices.map((price, i) => {
                         return (
                           <div
                             key={i}
-                            className="w-full h-32 flex justify-center items-center "
+                            className="w-full md:h-32 flex justify-center items-center "
                           >
                             {price.type === "digitalPurchasePrice" ? null : (
-                              <div className="w-1/2  flex flex-col justify-evenly items-center    ">
-                                <p className="text-gray-800 text-3xl font-bold  ">
-                                  Price:{" "}
-                                  <span className="text-green-800 text-5xl font-bold  ">
-                                    ${price.price}
-                                  </span>
-                                </p>
-                                <button className="w-1/ bg-green-600 text-gray-200 p-2 text-xl mt-3 font-bold  rounded-lg hover:bg-green-900 hover:scale-110 hover:text-white duration-1000 capitalize  ">
+                              <div className="w-full  flex flex-col justify-evenly items-center md:mt-2    ">
+                                <span className="text-green-500 text-xl lg:text-3xl xl:text-6xl font-bold mb-4 ">
+                                  ${price.price}
+                                </span>
+
+                                <button className="w-1/2 md:h-10 xl:h-12 bg-green-600 text-gray-200 lg:text-xl xl:text-2xl md:mt-3 font-bold  rounded-lg hover:bg-green-900 hover:scale-110 hover:text-white duration-1000 capitalize  ">
                                   buy comic
                                 </button>
                               </div>
@@ -191,6 +149,47 @@ export const ComicDetail = () => {
               );
             })
           : null}
+        {/* characters */}
+        {/* characters */}
+        {/* characters */}
+        {/* characters */}
+        {characters?.length > 0 ? (
+          <div className="w-full min-h-[400px] flex flex-col justify-center items-center bg-gray-700 ">
+            <h3 className="text-2xl xl:text-4xl font-bold uppercase text-white  tracking-wider text-center m-3 ShadowEffect2 ">
+              comic characters
+            </h3>
+            <div className="w-full md:w-3/4 flex flex-row justify-evenly flex-wrap  ">
+              {characters
+                .map((characterElement) => {
+                  return (
+                    <div key={characterElement.id}>
+                      <Link to={`/CharacterDetail/${characterElement.id}`}>
+                        <img
+                          className="w-24 h-24 md:w-20 md:h-20 xl:w-32 xl:h-32 shadow-lg hover:scale-110 duration-1000 m-2 ShadowEffect2"
+                          src={`${characterElement.thumbnail.path}.${characterElement.thumbnail.extension}`}
+                        />
+                      </Link>
+                    </div>
+                  );
+                })
+                .slice(firstIndex, lastIndex)}
+              <div className="w-full">
+                <Pagination
+                  comicsPerPage={charactersPerPage}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                  totalComics={totalComics}
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="w-full h-1/4 flex justify-center items-center ">
+            <h3 className="text-Marvel text-2xl font-bold uppercase">
+              no characters found
+            </h3>
+          </div>
+        )}
       </div>
     </>
   );
