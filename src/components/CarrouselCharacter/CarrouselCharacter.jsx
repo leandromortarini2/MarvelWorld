@@ -5,7 +5,6 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -39,14 +38,14 @@ const items = [
     src: "https://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg",
     enlase: "/CharacterDetail/1009351",
     title: "Hulk",
-    key: 4,
+    key: 5,
   },
   {
     src: "https://i.annihil.us/u/prod/marvel/i/mg/9/60/50febc4f55525.jpg",
     enlase: "/CharacterDetail/1009299",
     title: "Fantastic Four",
 
-    key: 5,
+    key: 6,
   },
 ];
 
@@ -97,11 +96,6 @@ function CarrouselCharacter(args) {
             </Link>
           </div>
         </div>
-
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
       </CarouselItem>
     );
   });

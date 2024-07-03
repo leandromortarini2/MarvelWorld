@@ -5,7 +5,6 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -97,11 +96,6 @@ function CarrouselSeries(args) {
             </Link>
           </div>
         </div>
-
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
       </CarouselItem>
     );
   });

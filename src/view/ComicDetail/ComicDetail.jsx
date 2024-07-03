@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, redirect, useParams } from "react-router-dom";
 import {
   getComicCharacters,
   getComicCreators,
-  getComicEvents,
   getComicID,
 } from "../../helpers/solicitudes";
 import { Pagination } from "../../components/Pagination/Pagination";
+import { useAuth } from "../../context/Context";
 
 export const ComicDetail = () => {
-  const [comic, setComic] = useState([]);
+  const { carrito, setCarrito } = useAuth();
+
+  const [comic, setComic] = useState(null);
   const [creator, setCreator] = useState([]);
   const [characters, setCharacters] = useState([]);
 
@@ -65,6 +67,11 @@ export const ComicDetail = () => {
       console.log(error);
     }
   }, [id]);
+
+  const handleAddToCart = () => {
+    setCarrito([...carrito, comic]);
+    alert("el comic se agrego al carrito");
+  };
 
   return (
     <>
@@ -135,9 +142,14 @@ export const ComicDetail = () => {
                                   ${price.price}
                                 </span>
 
-                                <button className="w-1/2 md:h-10 xl:h-12 bg-green-600 text-gray-200 lg:text-xl xl:text-2xl md:mt-3 font-bold  rounded-lg hover:bg-green-900 hover:scale-110 hover:text-white duration-1000 capitalize  ">
-                                  buy comic
-                                </button>
+                                <Link to="/">
+                                  <button
+                                    onClick={handleAddToCart}
+                                    className="w-40 md:h-10 xl:h-12 bg-green-600 text-gray-200 lg:text-xl xl:text-2xl md:mt-3 font-bold  rounded-lg hover:bg-green-900 hover:scale-110 hover:text-white duration-1000 capitalize  "
+                                  >
+                                    Add To Cart
+                                  </button>
+                                </Link>
                               </div>
                             )}
                           </div>

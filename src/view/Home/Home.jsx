@@ -1,9 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import Example from "../../components/Carrousel/Carrousel";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/Context";
 
 export const Home = () => {
+  const { carrito } = useAuth();
+
+  useEffect(() => {
+    console.log(carrito);
+  });
+
   return (
     <>
       <div className="w-full min-h-screen flex flex-col  items-center bg-gray-600">
